@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/yxt580101/h5-/issues"
   },
-  "homepage": "https://github.com/yxt580101/h5-#readme"
+  "homepage": "https://github.com/yxt580101/h5-#readme",
+  "dependencies": {
+    "vue": "^2.5.2"
+  }
 }

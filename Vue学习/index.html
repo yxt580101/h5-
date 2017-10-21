@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue学习</title>
+</head>
+<body>
+    <div id="app">
+        {{name}}
+    </div>
+    <div id="app-2">
+        <!-- v- 表示它们是Vue提供的特殊属性-->
+        <span v-bind:title='message'>
+            看看这是什么？
+        </span>
+        <p v-if='see'>现在看见美女了</p>
+        <p v-for='tool in tools'>
+            {{tool.text}}
+        </p>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        //声明式渲染
+        var app=new Vue({
+            el:'#app',
+            data:{
+                name:'曾经的热血，胆量哪去了？',
+            }
+        })
+        var app=new Vue({
+            el:'#app-2',
+            data:{
+                message:'页面加载于'+new Date().toLocaleDateString(),
+                see:true,
+                tools:[
+                    {text:'dfasf'},
+                    {text:'dfasdf'}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>任务管理系统</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>任务管理系统</h1>
+        <input type="text" v-model='message'><input type="button" value="添加" @click='addtodo'>
+        <p>任务列表：</p>
+        <ul class="todolists">
+            <li class="todolist" v-for='todo in todolists'>
+                {{todo.name}}
+                <input type="button" value="修改">
+            </li>
+            <div>
+                <p>
+                  
+                    <input type="button" value="修改">
+                </p>
+            </div>
+        </ul>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        var todolists=[
+            {
+                name:'吃饭',
+                done:false
+            },
+            {
+                name:'睡觉',
+                done:false
+            },
+            {
+                name:'玩电脑',
+                done:false
+            }
+        ]
+        var app=new Vue({
+            el:'#app',
+            data:{
+                todolists:todolists,
+                message:''
+            },
+            methods:{
+                addtodo:function(){
+                    this.todolists.push({
+                        name:this.message,
+                        done:false
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>
